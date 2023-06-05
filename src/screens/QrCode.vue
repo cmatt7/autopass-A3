@@ -1,0 +1,63 @@
+<script>
+import PaymentServicesFooter from '../components/PaymentServicesFooter.vue';
+
+export default {
+    components: { PaymentServicesFooter }
+}
+</script>
+
+<template>
+    <main class="flex flex-col justify-center items-center w-full h-screen">
+        <h1 class="text-5xl font-extrabold mb-20">Quantos bilhetes você deseja?</h1>
+
+        <div class="relative flex">
+            <div class="flex flex-col justify-center items-center gap-y-5 w-full">
+                <RouterLink to="/insertcard">
+                    <div
+                        class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
+                        <span>1 Unidade</span>
+
+                        <span>R$ 4,40</span>
+                    </div>
+                </RouterLink>
+
+                <RouterLink to="/insertcard">
+                    <div
+                        class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
+                        <span>2 Unidades</span>
+
+                        <span>R$ 8,80</span>
+                    </div>
+                </RouterLink>
+
+                <RouterLink to="/insertcard">
+                    <div
+                        class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
+                        <span>3 Unidades</span>
+
+                        <span>R$ 13,20</span>
+                    </div>
+                </RouterLink>
+
+                <RouterLink to="/insertcard">
+                    <div
+                        class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
+                        <span>4 Unidade</span>
+
+                        <span>R$ 17,60</span>
+                    </div>
+                </RouterLink>
+
+                <button type="button" class="rounded-full border-2 border-top py-2 px-4 mt-10 font-semibold" @click="$router.back()">
+                    Voltar
+                </button>
+            </div>
+
+            <figure>
+                <img src="../assets/top_qr_code.png" class="w-[500px]" />
+            </figure>
+        </div>
+
+        <PaymentServicesFooter />
+    </main>
+</template>
