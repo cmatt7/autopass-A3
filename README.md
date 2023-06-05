@@ -1,7 +1,30 @@
-# Vue 3 + Vite
+#  AutoPass A3
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+  
 
-## Recommended IDE Setup
+###  Este projeto foi produzido por:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+  
+
+####  Rafael Soares Cardozo
+
+####  Matheus Cruz
+
+####  Thiago Schott
+
+####  Rennan Silva
+
+####  Nicolas Coiado
+
+####  Adiel Dornelas
+
+  
+Caso queira olhar o projeto, primeiro verifique se possui as seguintes ferramentas instaladas: [Git](https://git-scm.com/downloads) + [NodeJS](https://nodejs.org/en).
+
+Em seguida, clone o projeto dentro de seu computador, siga os passos:
+	
+
+ 1. No terminal git digite: `git clone git@github.com:cmatt7/autopass-A3.git`
+ 2. Em seguida, caso não possua o Yarn instalado, digite `npm install -g yarn`
+ 3. Instale as dependências do projeto com `yarn` ou `yarn install`
+ 4. Para rodar o projeto localmente, digite: `yarn run dev`
