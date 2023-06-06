@@ -4,26 +4,30 @@ import PaymentServicesFooter from '../components/PaymentServicesFooter.vue';
 export default {
     data() {
         return {
-            time: 15,
             rechargeType: [
                 {
                     id: 1,
+                    path: "/selectpayment",
                     title: "Comum"
                 },
                 {
                     id: 2,
+                    path: "/transportvoucher",
                     title: "Vale-transporte"
                 },
                 {
                     id: 3,
+                    path: "/selectpayment",
                     title: "Escolar"
                 },
                 {
                     id: 4,
+                    path: "/selectpayment",
                     title: "Validação Web"
                 },
                 {
                     id: 5,
+                    path: "/selectpayment",
                     title: "Temporal"
                 },
             ],
@@ -56,21 +60,6 @@ export default {
             ],
         }
     },
-    methods: {
-        countdownTimer() {
-            if (this.time > 0) {
-                setTimeout(() => {
-                    this.time -= 1;
-                    this.countdownTimer()
-                }, 1000)
-            } else if (this.time === 0) {
-                //this.$router.replace('/password')
-            }
-        },
-    },
-    created() {
-        this.countdownTimer()
-    },
     components: { PaymentServicesFooter }
 }
 </script>
@@ -82,11 +71,12 @@ export default {
         <div class="flex justify-center gap-[2%] w-[80%]">
             <button
                 class="border-2 border-top shadow-xl py-5 px-12 rounded-[50px] text-3xl text-center font-regular cursor-pointer"
-                v-for="type in rechargeType"
-                :key="type.id"
-                @click="$router.replace('/selectpayment')"
+                v-for="info in rechargeType"
+                :key="info.id"
             >
-                {{ type.title }}
+                <RouterLink :to="info.path">
+                    {{ info.title }}
+                </RouterLink>
             </button>
         </div>
 

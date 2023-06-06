@@ -4,7 +4,7 @@ import TopServicesFooter from '../components/TopServicesFooter.vue';
 export default {
     data() {
         return {
-            time: 15,
+            time: 10,
         }
     },
     methods: {
