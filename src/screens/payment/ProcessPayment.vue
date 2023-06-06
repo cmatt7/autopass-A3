@@ -1,5 +1,5 @@
 <script>
-import TopServicesFooter from '../components/TopServicesFooter.vue';
+import TopServicesFooter from '../../components/TopServicesFooter.vue';
 
 export default {
     data() {

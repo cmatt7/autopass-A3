@@ -5,6 +5,55 @@ export default {
     data() {
         return {
             time: 15,
+            rechargeType: [
+                {
+                    id: 1,
+                    title: "Comum"
+                },
+                {
+                    id: 2,
+                    title: "Vale-transporte"
+                },
+                {
+                    id: 3,
+                    title: "Escolar"
+                },
+                {
+                    id: 4,
+                    title: "Validação Web"
+                },
+                {
+                    id: 5,
+                    title: "Temporal"
+                },
+            ],
+            rechargeInfo: [
+                {
+                    id: 1,
+                    title: "Comum",
+                    value: "R$ 00,00",
+                },
+                {
+                    id: 2,
+                    title: "Vale Transporte",
+                    value: "R$ 00,00",
+                },
+                {
+                    id: 3,
+                    title: "Escolar",
+                    value: "R$ 00,00",
+                },
+                {
+                    id: 4,
+                    title: "Temporal 1",
+                    value: "VE D GRT ÔNIBUS\n VALIDAÇÃO EXPIRADA",
+                },
+                {
+                    id: 5,
+                    title: "Temporal 2",
+                    value: "VE D GRT ÔNIBUS\n VALIDAÇÃO EXPIRADA",
+                },
+            ],
         }
     },
     methods: {
@@ -30,32 +79,27 @@ export default {
     <main class="flex flex-col justify-center items-center w-full h-screen">
         <h1 class="text-5xl font-extrabold mb-20">Selecione o tipo de recarga</h1>
 
-        <div class="flex  justify-center gap-[1%] w-[80%]">
+        <div class="flex justify-center gap-[2%] w-[80%]">
             <button
-                class="border-2 border-top shadow-xl p-5 rounded-[50px] w-60 text-3xl text-center font-regular cursor-pointer"
-                @click="$router.replace('/')">
-                Comum
+                class="border-2 border-top shadow-xl py-5 px-12 rounded-[50px] text-3xl text-center font-regular cursor-pointer"
+                v-for="type in rechargeType"
+                :key="type.id"
+                @click="$router.replace('/selectpayment')"
+            >
+                {{ type.title }}
             </button>
-            <button
-                class="mr-30px border-2 border-top shadow-xl p-5 rounded-[50px] w-80 text-3xl font-regular font-regular cursor-pointer"
-                @click="$router.replace('/')">
-                Vale-transporte
-            </button>
-            <button
-                class="border-2 border-top shadow-xl p-5 rounded-[50px] w-60 text-3xl text-center font-regular cursor-pointer"
-                @click="$router.replace('/')">
-                Escolar
-            </button>
-            <button
-                class="border-2 border-top shadow-xl p-5 rounded-[50px] w-80 text-3xl text-center font-regular cursor-pointer"
-                @click="$router.replace('/')">
-                Validação web
-            </button>
-            <button
-                class="border-2 border-top shadow-xl p-5 rounded-[50px] w-60 text-3xl text-center font-regular cursor-pointer"
-                @click="$router.replace('/')">
-                Temporal
-            </button>
+        </div>
+
+        <div class="flex flex-row justify-center items-center gap-x-10 w-full mt-20">
+            <div class="flex flex-col justify-center items-center shadow-2xl rounded-3xl w-[200px]" v-for="info in rechargeInfo" :key="info.id">
+                <div class="bg-top text-white font-bold text-lg py-3 w-full rounded-t-3xl text-center ">
+                    {{ info.title }}
+                </div>
+
+                <div class="text-center py-6">
+                    {{ info.value }}
+                </div>
+            </div>
         </div>
 
         <button type="button"

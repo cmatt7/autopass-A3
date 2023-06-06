@@ -15,7 +15,7 @@ export default {
                     this.countdownTimer()
                 }, 1000)
             } else if (this.time === 0) {
-                //this.$router.replace('/password')
+                this.$router.replace('/recharge')
             }
         },
     },
