@@ -17,7 +17,7 @@ export default {
                 },
                 {
                     id: 3,
-                    path: "/selectpayment",
+                    path: "/schooltransportvoucher",
                     title: "Escolar"
                 },
                 {
