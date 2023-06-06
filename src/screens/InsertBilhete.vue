@@ -15,7 +15,7 @@ export default {
                     this.countdownTimer()
                 }, 1000)
             } else if (this.time === 0) {
-                this.$router.replace('/password')
+                //this.$router.replace('/password')
             }
         },
     },
@@ -28,16 +28,10 @@ export default {
 
 <template>
     <main class="flex flex-col justify-center items-center w-full h-screen">
-        <h1 class="text-5xl font-extrabold mb-20">Insira seu cartão de débito</h1>
-
-        <div class="flex justify-around w-[30%] text-xl font-semibold mb-10">
-            <span>4 Unidades</span>
-
-            <span>R$ 13,20</span>
-        </div>
+        <h1 class="text-5xl font-extrabold mb-20">Insira bilhete único</h1>
 
         <figure class="flex flex-col justify-center items-center">
-            TBC
+            <img src="../assets/insira-o-bilhete.png" class="w-[50%] mb-5" />
 
             <span class="text-top font-semibold text-lg">{{ time }}</span>
         </figure>
@@ -53,7 +47,7 @@ export default {
             </div>
         </button>
 
-        <span class="absolute right-20 bottom-24 font-semibold text-3xl">Somente débito</span>
+        <span class="absolute right-20 bottom-24 font-semibold text-3xl">Somente débito ou dinheiro</span>
 
         <PaymentServicesFooter />
     </main>

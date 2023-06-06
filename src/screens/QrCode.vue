@@ -47,17 +47,22 @@ export default {
                         <span>R$ 17,60</span>
                     </div>
                 </RouterLink>
-
-                <button type="button" class="rounded-full border-2 border-top py-2 px-4 mt-10 font-semibold" @click="$router.back()">
-                    Voltar
-                </button>
             </div>
 
             <figure>
                 <img src="../assets/top_qr_code.png" class="w-[500px]" />
             </figure>
         </div>
-
+        <button type="button"
+            class="absolute left-20 bottom-24 rounded-full border-2 border-top py-2 px-4 mt-10 font-semibold"
+            @click="$router.back()">
+            <div class="flex flex-row justify-start">
+                <figure class="flex flex-row justify-start mr-3">
+                    <img src="../assets/voltar_icon.png" class="w-[20px]" />
+                </figure>
+                <span>Voltar</span>
+            </div>
+        </button>
         <PaymentServicesFooter />
     </main>
 </template>
