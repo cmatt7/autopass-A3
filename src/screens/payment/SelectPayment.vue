@@ -15,7 +15,7 @@ export default {
                 Débito
             </button>
 
-            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl" @click="$router.replace('/selectamount')">
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl" @click="$router.replace('/moneypayment')">
                 Dinheiro
             </button>
         </div>
