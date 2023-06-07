@@ -37,8 +37,7 @@ export default {
         </div>
 
         <figure class="flex flex-col justify-center items-center">
-            TBC
-
+            <img src="../assets/insira-o-cartao.png" title="Ícone inserir" class="h-[250px]" />
             <span class="text-top font-semibold text-lg">{{ time }}</span>
         </figure>
 

@@ -8,7 +8,7 @@ export default {
 
 <template>
     <main class="flex flex-col justify-center items-center w-full h-screen">
-        <h1 class="text-5xl font-extrabold mb-20">Quantos bilhetes você deseja?</h1>
+        <h1 class="text-6xl font-extrabold ">Quantos bilhetes você deseja?</h1>
 
         <div class="relative flex">
             <div class="flex flex-col justify-center items-center gap-y-5 w-full">
@@ -42,7 +42,7 @@ export default {
                 <RouterLink to="/insertcard">
                     <div
                         class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
-                        <span>4 Unidade</span>
+                        <span>4 Unidades</span>
 
                         <span>R$ 17,60</span>
                     </div>
@@ -50,7 +50,7 @@ export default {
             </div>
 
             <figure>
-                <img src="../assets/top_qr_code.png" class="w-[500px]" />
+                <img src="../assets/bilheteqrcode.png" />
             </figure>
         </div>
         <button type="button"

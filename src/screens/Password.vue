@@ -30,15 +30,14 @@ export default {
     <main class="flex flex-col justify-center items-center w-full h-screen">
         <h1 class="text-5xl font-extrabold mb-20">Digite sua senha</h1>
 
-        <div class="flex justify-around w-[30%] text-xl font-semibold mb-10">
+        <div class="flex justify-around w-[30%] text-xl font-semibold mb-3">
             <span>4 Unidades</span>
 
             <span>R$ 13,20</span>
         </div>
 
         <figure class="flex flex-col justify-center items-center">
-            TBC
-
+            <img src="../assets/senha.png" title="Ícone senha" class="h-[250px]" />
             <span class="text-top font-semibold text-lg">{{ time }}</span>
         </figure>
 

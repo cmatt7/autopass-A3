@@ -16,6 +16,7 @@ import TransportVoucher from '../screens/TransportVoucher.vue';
 import SchoolTransportVoucher from '../screens/SchoolTransportVoucher.vue';
 import TypeAmount from '../screens/payment/TypeAmount.vue';
 import ProcessPayment from '../screens/payment/ProcessPayment.vue';
+import ProcessMoney from '../screens/payment/ProcessMoney.vue';
 import PaymentApproved from '../screens/payment/PaymentApproved.vue';
 import VoucherApproved from '../screens/payment/VoucherApproved.vue';
 import SchoolVoucherApproved from '../screens/payment/SchoolVoucherApproved.vue';
@@ -39,6 +40,7 @@ const routes = [
     { path: '/selectamount', component: SelectAmount },
     { path: '/typeamount', component: TypeAmount },
     { path: '/processpayment', component: ProcessPayment },
+    { path: '/processmoney', component: ProcessMoney },
     { path: '/approved', component: PaymentApproved },
     { path: '/voucherapproved', component: VoucherApproved },
     { path: '/schoolvoucherapproved', component: SchoolVoucherApproved },

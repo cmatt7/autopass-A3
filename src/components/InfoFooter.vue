@@ -1,25 +1,25 @@
 <script>
-    export default {
-        data() {
-            return {
-                timestamp: '',
-                date: '',
-            }
-        },
-        methods: {
-            getCurrentDateInfo () {
-                const currentDate = new Date();
-                const currentDateWithFormat = `${currentDate.toLocaleDateString()}`;
-                const currentTimeWithFormat = `${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false})}`;
-
-                this.date = currentDateWithFormat;
-                this.timestamp = currentTimeWithFormat;
-            }
-        },
-        mounted() {
-            setInterval(() => { this.getCurrentDateInfo() }, 1000);
+export default {
+    data() {
+        return {
+            timestamp: '',
+            date: '',
         }
+    },
+    methods: {
+        getCurrentDateInfo() {
+            const currentDate = new Date();
+            const currentDateWithFormat = `${currentDate.toLocaleDateString()}`;
+            const currentTimeWithFormat = `${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}`;
+
+            this.date = currentDateWithFormat;
+            this.timestamp = currentTimeWithFormat;
+        }
+    },
+    mounted() {
+        setInterval(() => { this.getCurrentDateInfo() }, 1000);
     }
+}
 </script>
 
 <template>

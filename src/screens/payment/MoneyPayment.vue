@@ -17,7 +17,8 @@ export default {
 
         <p class="text-2xl">Valor total inserido: <span class="font-bold">R$10,00</span></p>
 
-        <button type="button" class="border-2 border-top py-5 px-20 text-2xl font-semibold rounded-3xl mt-10" @click="$router.replace('/processpayment')">
+        <button type="button" class="border-2 border-top py-5 px-20 text-2xl font-semibold rounded-3xl mt-10"
+            @click="$router.replace('/processmoney')">
             Concluir
         </button>
 

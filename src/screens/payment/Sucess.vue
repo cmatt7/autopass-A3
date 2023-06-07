@@ -5,7 +5,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.$router.replace("/print")
-        }, 3000)
+        }, 5000)
     },
     components: { TopServicesFooter }
 }
@@ -16,10 +16,10 @@ export default {
         <h1 class="text-5xl font-extrabold mb-5">Bilhete carregado com sucesso</h1>
 
         <figure class="my-10">
-            TBC
+            <img src="../../assets/cartão-carregado.png" title="Ícone senha" class="h-[250px]" />
         </figure>
 
-        <p class="text-2xl">Seu novo saldo: <span class="font-bold">R$ 13,20</span></p>
+        <p class="text-2xl">Seu novo saldo: <span class="text-top font-bold">R$ 13,20</span></p>
         <span class="text-top text-2xl font-bold mt-5">Não se esqueça de retirar-se da ATM</span>
 
         <TopServicesFooter />

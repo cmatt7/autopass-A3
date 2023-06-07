@@ -5,7 +5,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.$router.replace("/sucess");
-        }, 3000)
+        }, 5000)
     },
     components: { TopServicesFooter }
 }
@@ -18,7 +18,7 @@ export default {
         <span class="text-2xl">Retire seu cartão</span>
 
         <figure class="mt-10">
-            TBC
+            <img src="../../assets/pagamento aprovado.png" title="Ícone senha" class="h-[250px]" />
         </figure>
 
         <TopServicesFooter />
