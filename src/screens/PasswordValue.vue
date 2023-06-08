@@ -3,8 +3,8 @@ import TopServicesFooter from '../components/TopServicesFooter.vue';
 
 export default {
     data() {
-        let qtdpassagem = localStorage.getItem('valor')
-        let valorpassagens = (qtdpassagem * 4.40).toFixed(2)
+        let qtdpassagem = localStorage.getItem('value')
+        let valorpassagens = qtdpassagem.toFixed(2)
         let valorformatado = valorpassagens.replace('.', ',')
         console.log(qtdpassagem)
         return {

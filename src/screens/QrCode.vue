@@ -12,7 +12,7 @@ export default {
 
         <div class="relative flex">
             <div class="flex flex-col justify-center items-center gap-y-5 w-full">
-                <RouterLink to="/insertcard">
+                <RouterLink to="/insertcard/1">
                     <div
                         class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
                         <span>1 Unidade</span>
@@ -21,7 +21,7 @@ export default {
                     </div>
                 </RouterLink>
 
-                <RouterLink to="/insertcard">
+                <RouterLink to="/insertcard/2">
                     <div
                         class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
                         <span>2 Unidades</span>
@@ -30,7 +30,7 @@ export default {
                     </div>
                 </RouterLink>
 
-                <RouterLink to="/insertcard">
+                <RouterLink to="/insertcard/3">
                     <div
                         class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
                         <span>3 Unidades</span>
@@ -39,7 +39,7 @@ export default {
                     </div>
                 </RouterLink>
 
-                <RouterLink to="/insertcard">
+                <RouterLink to="/insertcard/4">
                     <div
                         class="flex flex-row justify-between border-2 border-top rounded-full w-[600px] py-3 px-10 font-bold text-lg shadow-xl">
                         <span>4 Unidades</span>

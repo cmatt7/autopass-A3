@@ -1,10 +1,18 @@
 <script>
 import PaymentServicesFooter from '../components/PaymentServicesFooter.vue';
+import { useRoute } from 'vue-router';
 
 export default {
     data() {
+        const route = useRoute()
+        let qtdpassagem = route.params.qtd
+        localStorage.setItem('quantidade', route.params.qtd)
+        let valorpassagens = (qtdpassagem * 4.40).toFixed(2)
+        let valorformatado = valorpassagens.replace('.', ',')
         return {
             time: 15,
+            qtd: route.params.qtd,
+            valor: valorformatado
         }
     },
     methods: {
@@ -31,9 +39,10 @@ export default {
         <h1 class="text-5xl font-extrabold mb-20">Insira seu cartão de débito</h1>
 
         <div class="flex justify-around w-[30%] text-xl font-semibold mb-10">
-            <span>4 Unidades</span>
+            <span v-if="qtd == 1">{{ qtd }} Unidade</span>
+            <span v-else="qtd>1">{{ qtd }} Unidades</span>
 
-            <span>R$ 13,20</span>
+            <span>R$ {{ valor }}</span>
         </div>
 
         <figure class="flex flex-col justify-center items-center">

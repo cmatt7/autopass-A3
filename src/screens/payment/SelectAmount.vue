@@ -4,27 +4,7 @@ import PaymentServicesFooter from '../../components/PaymentServicesFooter.vue';
 export default {
     data() {
         return {
-            time: 15,
-            componentInfo: [
-                {
-                    value: "R$ 5,00",
-                },
-                {
-                    value: "R$ 10,00",
-                },
-                {
-                    value: "R$ 15,00",
-                },
-                {
-                    value: "R$ 20,00",
-                },
-                {
-                    value: "R$ 50,00",
-                },
-                {
-                    value: "Outro valor",
-                },
-            ],
+            time: 15
         }
     },
     methods: {
@@ -52,13 +32,30 @@ export default {
 
         <div class="grid grid-cols-2 gap-10">
             <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
-                v-for="info in componentInfo" @click="$router.replace('/typeamount')">
-                {{  info.value }}
+                @click="$router.replace('/insertcardvalue/5')">
+                R$ 5,00
+            </button>
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
+                @click="$router.replace('/insertcardvalue/10')">
+                R$ 10,00
+            </button>
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
+                @click="$router.replace('/insertcardvalue/15')">
+                R$ 15,00
+            </button>
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
+                @click="$router.replace('/insertcardvalue/20')">
+                R$ 20,00
+            </button>
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
+                @click="$router.replace('/insertcardvalue/50')">
+                R$ 50,00
+            </button>
+            <button type="button" class="border-2 border-top text-3xl text-black font-bold py-6 px-20 rounded-3xl shadow-xl"
+                @click="$router.replace('/typeamount')">
+                Outro valor
             </button>
         </div>
-
-        <span class="text-top text-lg font-bold mt-20">{{ time }}</span>
-
         <button type="button"
             class="absolute left-20 bottom-24 rounded-full border-2 border-top py-2 px-4 mt-10 font-semibold"
             @click="$router.back()">
