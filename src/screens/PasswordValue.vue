@@ -1,16 +1,14 @@
 <script>
 import TopServicesFooter from '../components/TopServicesFooter.vue';
+import { useRoute } from 'vue-router';
 
 export default {
     data() {
-        let qtdpassagem = localStorage.getItem('value')
-        let valorpassagens = qtdpassagem.toFixed(2)
-        let valorformatado = valorpassagens.replace('.', ',')
-        console.log(qtdpassagem)
+        const route = useRoute()
         return {
             time: 15,
-            qtd: qtdpassagem,
-            valor: valorformatado
+            newRoute: '/passwordvalue/' + route.params.value,
+            value: route.params.value
         }
     },
     methods: {
@@ -21,7 +19,8 @@ export default {
                     this.countdownTimer()
                 }, 1000)
             } else if (this.time === 0) {
-                this.$router.replace('/print')
+                localStorage.setItem('NewRecharged', this.value);
+                this.$router.replace('/processpayment')
             }
         }
     },
@@ -36,10 +35,8 @@ export default {
     <main class="flex flex-col justify-center items-center w-full h-screen">
         <h1 class="text-5xl font-extrabold mb-20">Digite sua senha</h1>
 
-        <div class="flex justify-around w-[30%] text-xl font-semibold mb-3">
-            <span>{{ qtd }} Unidades</span>
-
-            <span>R$ {{ valor }}</span>
+        <div class="flex justify-around w-[30%] text-xl font-semibold">
+            <span>R$ {{ value }}</span>
         </div>
 
         <figure class="flex flex-col justify-center items-center">

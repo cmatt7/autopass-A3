@@ -2,8 +2,25 @@
 import PaymentServicesFooter from '../../components/PaymentServicesFooter.vue';
 
 export default {
+    data() {
+        return {
+            valor: 'R$',
+        }
+    },
+    methods: {
+        insert: function (number) {
+            this.valor += number
+        },
+        replace: function () {
+            let valor = this.valor.replace('R$', '')
+            let rota = '/insertcardvalue/' + valor
+            this.$router.replace(rota)
+        }
+    },
     components: { PaymentServicesFooter }
 }
+
+
 </script>
 
 <template>
@@ -15,28 +32,29 @@ export default {
         <!-- Calculator Mockup -->
         <div class="w-[300px] h-auto border-2 border-black mt-10 rounded-2xl">
             <div class="flex flex-col items-center border-b-2 border-black py-5">
-                <span class="text-top text-xl font-semibold text-center">R$100,00</span>
+                <span class="text-top text-xl font-semibold text-center">{{ valor }}</span>
             </div>
 
             <div class="grid grid-rows-4 text-xl">
                 <div class="grid grid-cols-3 text-center">
-                    <span class="border-b-2 border-r-2 border-black p-4">7</span>
-                    <span class="border-b-2 border-r-2 border-black p-4">8</span>
-                    <span class="border-b-2 border-black p-4">9</span>
+                    <span @click="insert(7)" class="border-b-2 border-r-2 border-black p-4">7</span>
+                    <span @click="insert(8)" class="border-b-2 border-r-2 border-black p-4">8</span>
+                    <span @click="insert(9)" class="border-b-2 border-black p-4">9</span>
                 </div>
                 <div class="grid grid-cols-3 text-center">
-                    <span class="border-b-2 border-r-2 border-black p-4">4</span>
-                    <span class="border-b-2 border-r-2 border-black p-4">5</span>
-                    <span class="border-b-2 border-black p-4">6</span>
+                    <span @click="insert(4)" class="border-b-2 border-r-2 border-black p-4">4</span>
+                    <span @click="insert(5)" class="border-b-2 border-r-2 border-black p-4">5</span>
+                    <span @click="insert(6)" class="border-b-2 border-black p-4">6</span>
                 </div>
                 <div class="grid grid-cols-3 text-center">
-                    <span class="border-b-2 border-r-2 border-black p-4">1</span>
-                    <span class="border-b-2 border-r-2 border-black p-4">2</span>
-                    <span class="border-b-2 border-black p-4">3</span>
+                    <span @click="insert(1)" class="border-b-2 border-r-2 border-black p-4">1</span>
+                    <span @click="insert(2)" class="border-b-2 border-r-2 border-black p-4">2</span>
+                    <span @click="insert(3)" class="border-b-2 border-black p-4">3</span>
                 </div>
                 <div class="grid grid-cols-3 text-center">
-                    <span class="border-r-2 border-black p-4">0</span>
-                    <button type="button" class="col-span-2" @click="$router.replace('/insertcard')">
+                    <span @click="insert(0)" class="border-r-2 border-black p-4">0</span>
+                    <span @click="insert(',')" class="border-r-2 border-black p-4">,</span>
+                    <button type="button" @click="replace">
                         Selecionar
                     </button>
                 </div>

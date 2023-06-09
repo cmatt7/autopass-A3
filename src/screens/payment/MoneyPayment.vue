@@ -2,10 +2,16 @@
 import TopServicesFooter from '../../components/TopServicesFooter.vue';
 
 export default {
-    mounted() {
-        setTimeout(() => {
-
-        }, 3000)
+    data() {
+        return {
+            value: Math.floor(Math.random() * 100)
+        }
+    },
+    methods: {
+        replace: function () {
+            localStorage.setItem('NewRecharged', this.value);
+            this.$router.replace('/processmoney')
+        }
     },
     components: { TopServicesFooter }
 }
@@ -15,10 +21,10 @@ export default {
     <main class="flex flex-col justify-center items-center w-full h-screen">
         <h1 class="text-5xl font-extrabold mb-5">Pagamento com dinheiro</h1>
 
-        <p class="text-2xl">Valor total inserido: <span class="font-bold">R$10,00</span></p>
+        <p class="text-2xl">Valor total inserido: <span class="font-bold">R$ {{ value }}</span></p>
 
         <button type="button" class="border-2 border-top py-5 px-20 text-2xl font-semibold rounded-3xl mt-10"
-            @click="$router.replace('/processmoney')">
+            @click="replace">
             Concluir
         </button>
 

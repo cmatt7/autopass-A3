@@ -1,19 +1,22 @@
 <script>
 import TopServicesFooter from '../components/TopServicesFooter.vue';
+import { useRoute } from 'vue-router';
 
 export default {
     data() {
-        let qtdpassagem = localStorage.getItem('valor')
-        let valorpassagens = (qtdpassagem * 4.40).toFixed(2)
-        let valorformatado = valorpassagens.replace('.', ',')
-        console.log(qtdpassagem)
+        const route = useRoute()
         return {
             time: 15,
-            qtd: qtdpassagem,
-            valor: valorformatado
+            qtd: route.params.qtd,
+            value: this.createValue(route.params.qtd)
         }
     },
     methods: {
+        createValue: function (quantidade) {
+            let valueTicket = (quantidade * 4.40).toFixed(2)
+            let valueFormatted = valueTicket.replace('.', ',')
+            return valueFormatted
+        },
         countdownTimer() {
             if (this.time > 0) {
                 setTimeout(() => {
@@ -39,7 +42,7 @@ export default {
         <div class="flex justify-around w-[30%] text-xl font-semibold mb-3">
             <span>{{ qtd }} Unidades</span>
 
-            <span>R$ {{ valor }}</span>
+            <span>R$ {{ value }}</span>
         </div>
 
         <figure class="flex flex-col justify-center items-center">

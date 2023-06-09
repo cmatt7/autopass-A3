@@ -5,13 +5,10 @@ import { useRoute } from 'vue-router';
 export default {
     data() {
         const route = useRoute()
-        let valorpassagem = route.params.valor
-        localStorage.setItem('valor', route.params.qtd)
-        let valorformatado = valorpassagem.replace('.', ',')
-        console.log(valorformatado)
         return {
             time: 15,
-            valor: valorformatado
+            newRoute: '/passwordvalue/' + route.params.value,
+            value: route.params.value
         }
     },
     methods: {
@@ -22,7 +19,7 @@ export default {
                     this.countdownTimer()
                 }, 1000)
             } else if (this.time === 0) {
-                //this.$router.replace('/password')
+                this.$router.replace(this.newRoute)
             }
         },
     },
@@ -38,7 +35,7 @@ export default {
         <h1 class="text-5xl font-extrabold mb-20">Insira seu cartão de débito</h1>
 
         <div class="flex justify-around w-[30%] text-xl font-semibold">
-            <span>R$ {{ valor }}</span>
+            <span>R$ {{ value }}</span>
         </div>
 
         <figure class="flex flex-col justify-center items-center">
@@ -56,9 +53,6 @@ export default {
                 <span>Voltar</span>
             </div>
         </button>
-
-        <span class="absolute right-20 bottom-24 font-semibold text-3xl">Somente débito</span>
-
         <PaymentServicesFooter />
     </main>
 

@@ -5,25 +5,28 @@ import { useRoute } from 'vue-router';
 export default {
     data() {
         const route = useRoute()
-        let qtdpassagem = route.params.qtd
-        localStorage.setItem('quantidade', route.params.qtd)
-        let valorpassagens = (qtdpassagem * 4.40).toFixed(2)
-        let valorformatado = valorpassagens.replace('.', ',')
         return {
             time: 15,
             qtd: route.params.qtd,
-            valor: valorformatado
+            valor: this.createValue(route.params.qtd)
         }
     },
     methods: {
+        createValue: function (quantidade) {
+            let valueTicket = (quantidade * 4.40).toFixed(2)
+            let valueFormatted = valueTicket.replace('.', ',')
+            return valueFormatted
+        },
         countdownTimer() {
+
             if (this.time > 0) {
                 setTimeout(() => {
                     this.time -= 1;
                     this.countdownTimer()
                 }, 1000)
             } else if (this.time === 0) {
-                this.$router.replace('/password')
+                let newRoute = '/password/' + this.qtd
+                this.$router.replace(newRoute)
             }
         },
     },

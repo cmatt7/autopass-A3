@@ -2,6 +2,12 @@
 import TopServicesFooter from '../../components/TopServicesFooter.vue';
 
 export default {
+    data() {
+        localStorage.setItem('Balance', localStorage.getItem('NewRecharged'));
+        return {
+            value: localStorage.getItem('NewRecharged')
+        }
+    },
     mounted() {
         setTimeout(() => {
             this.$router.replace("/print")
@@ -19,7 +25,7 @@ export default {
             <img src="../../assets/cartão-carregado.png" title="Ícone senha" class="h-[250px]" />
         </figure>
 
-        <p class="text-2xl">Seu novo saldo: <span class="text-top font-bold">R$ 13,20</span></p>
+        <p class="text-2xl">Seu novo saldo: <span class="text-top font-bold">R$ {{ value }}</span></p>
         <span class="text-top text-2xl font-bold mt-5">Não se esqueça de retirar-se da ATM</span>
 
         <TopServicesFooter />

@@ -16,7 +16,7 @@ export default {
         <h1 class="text-5xl font-extrabold mb-5">Vale transporte carregado com sucesso</h1>
 
         <figure class="my-10">
-            TBC
+            <img src="../../assets/cartão-carregado.png" title="Ícone senha" class="h-[250px]" />
         </figure>
 
         <p class="text-2xl">Seu novo saldo: <span class="font-bold">R$ 320, 00</span></p>

@@ -3,6 +3,7 @@ import PaymentServicesFooter from '../components/PaymentServicesFooter.vue';
 
 export default {
     data() {
+        let comum = 'R$' + localStorage.getItem('Balance')
         return {
             rechargeType: [
                 {
@@ -35,17 +36,17 @@ export default {
                 {
                     id: 1,
                     title: "Comum",
-                    value: "R$ 00,00",
+                    value: comum,
                 },
                 {
                     id: 2,
                     title: "Vale Transporte",
-                    value: "R$ 00,00",
+                    value: "R$ 320,00",
                 },
                 {
                     id: 3,
                     title: "Escolar",
-                    value: "R$ 00,00",
+                    value: "R$ 320,00",
                 },
                 {
                     id: 4,
@@ -70,23 +71,22 @@ export default {
 
         <div class="flex justify-center gap-[2%] w-[80%]">
             <button
-                class="border-2 border-top shadow-xl py-5 px-12 rounded-[50px] text-3xl text-center font-regular cursor-pointer"
-                v-for="info in rechargeType"
-                :key="info.id"
-            >
+                class="border-2 border-top shadow-xl py-4 px-10 rounded-[50px] text-2xl text-center font-regular cursor-pointer"
+                v-for="info in rechargeType" :key="info.id">
                 <RouterLink :to="info.path">
                     {{ info.title }}
                 </RouterLink>
             </button>
         </div>
 
-        <div class="flex flex-row justify-center items-center gap-x-10 w-full mt-20">
-            <div class="flex flex-col justify-center items-center shadow-2xl rounded-3xl w-[200px]" v-for="info in rechargeInfo" :key="info.id">
+        <div class="flex flex-row justify-center items-center gap-x-10 w-full mt-20 mb-10">
+            <div class="flex flex-col justify-center items-center shadow-2xl rounded-3xl w-[200px]"
+                v-for="info in rechargeInfo" :key="info.id">
                 <div class="bg-top text-white font-bold text-lg py-3 w-full rounded-t-3xl text-center ">
                     {{ info.title }}
                 </div>
 
-                <div class="text-center py-6">
+                <div class="text-center py-3">
                     {{ info.value }}
                 </div>
             </div>
